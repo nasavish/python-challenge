@@ -38,3 +38,18 @@ print('--------------------')
 winner = results_df['Percent'].sort_values(ascending=False)
 print('Winner: {}'.format(winner.index[0]))
 print('--------------------')
+
+# Export results into .txt
+# 'main.py' > 'main.txt'
+f= open("main.txt","w")
+f.write('Election Results')
+f.write('--------------------')
+f.write('Total Votes: ' + str(total_votes))
+f.write('--------------------')
+f.write(str(results_df[['Percent', 'Votes']]))
+f.write('--------------------')
+f.write('Winner: {}'.format(winner.index[0]))
+f.write('--------------------') 
+f.close() 
+
+
