@@ -53,3 +53,17 @@ min_rev = min_rev_change_reset.loc[:,'Monthly Revenue Delta'].values[0]
 min_rev
 
 print('Greatest Decrease in Revenue: {} ({})'.format(min_date, int(min_rev)))
+
+
+
+# Export results into .txt
+# 'main.py' > 'main.txt'
+f= open("main.txt","w")
+f.write('Financial Analysis\n')
+f.write('----------------------------\n')
+f.write('\nTotal Revenue: ' + '$' + str(total_revenue))
+f.write('\nTotal Months: ' + str(total_months))
+f.write('\nAverage Revenue Change: ' + '$' + str(round(avg_monthly_delta, 2)))
+f.write('\nGreatest Increase in Revenue: {} ({})'.format(max_date, int(max_rev)))
+f.write('\nGreatest Decrease in Revenue: {} ({})'.format(min_date, int(min_rev)))
+f.close() 
